@@ -1,0 +1,18 @@
+body {
+  background: linear-gradient(to bottom right, #0a0f2c, #1a1f4c);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.hero-bg {
+  background-size: cover;
+  background-position: center;
+}
+.section-bg {
+  background-size: cover;
+  background-position: center;
+}
+.overlay {
+  background: rgba(0,0,0,0.6);
+  border-radius: 1rem;
+  padding: 2rem;
+}
