@@ -11,28 +11,25 @@
 
   <!-- Navbar -->
   <nav class="bg-black bg-opacity-70 backdrop-blur-md text-white p-4 shadow-lg flex justify-between items-center sticky top-0 z-50">
-    <h1 class="text-2xl font-bold tracking-wide">Clube de Física ⚡</h1>
-    <!-- Botão menu hambúrguer -->
-    <button id="menu-btn" class="md:hidden text-3xl">☰</button>
-    <!-- Menu -->
-    <ul id="menu" class="hidden md:flex gap-6 flex-col md:flex-row absolute md:static bg-black md:bg-transparent top-16 right-4 md:top-0 md:right-0 p-4 md:p-0 rounded-xl md:rounded-none">
+    <h1 class="text-xl sm:text-2xl font-bold tracking-wide">Clube de Física ⚡</h1>
+    <ul class="hidden md:flex gap-6">
       <li><a href="#sobre" class="hover:text-blue-400 transition">Sobre</a></li>
       <li><a href="#nucleos" class="hover:text-blue-400 transition">Núcleos</a></li>
       <li><a href="#atividades" class="hover:text-blue-400 transition">Atividades</a></li>
       <li><a href="#contato" class="hover:text-blue-400 transition">Contato</a></li>
+      <li><button onclick="openModal('loginModal')" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-800 transition">Login</button></li>
+      <li><button onclick="openModal('registerModal')" class="bg-green-600 px-4 py-2 rounded-lg hover:bg-green-800 transition">Registrar</button></li>
     </ul>
+    <!-- Botão hambúrguer mobile -->
+    <button id="menu-btn" class="md:hidden text-3xl">☰</button>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero-bg flex-1 flex flex-col items-center justify-center text-center p-10 text-white relative">
     <div class="overlay max-w-3xl">
-      <h2 class="text-3xl sm:text-5xl md:text-7xl font-extrabold mb-6 animate-bounce">
-        Bem-vindo ao Clube de Física
-      </h2>
-      <p class="text-base sm:text-lg md:text-2xl mb-6">
-        Ciência, inovação e descobertas em um só lugar! 🚀✨
-      </p>
-      <a href="#nucleos" class="bg-gradient-to-r from-blue-500 to-purple-700 hover:scale-110 transform transition px-10 py-5 rounded-2xl text-xl font-bold shadow-lg">
+      <h2 class="text-3xl sm:text-5xl md:text-7xl font-extrabold mb-6 animate-bounce">Bem-vindo ao Clube de Física</h2>
+      <p class="text-base sm:text-lg md:text-2xl mb-6">Ciência, inovação e descobertas em um só lugar! 🚀✨</p>
+      <a href="#nucleos" class="bg-gradient-to-r from-blue-500 to-purple-700 hover:scale-110 transform transition px-8 py-4 rounded-xl shadow-2xl text-lg font-semibold">
         Conheça nossos Núcleos
       </a>
     </div>
@@ -42,7 +39,7 @@
   <section id="sobre" class="section-bg py-16 px-6 md:px-20 relative" style="background-image:url('https://images.unsplash.com/photo-1581091012184-5c8a0d33bd83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
     <div class="overlay max-w-4xl mx-auto text-center">
       <h3 class="text-2xl sm:text-4xl font-bold text-blue-300 mb-6">Sobre o Clube</h3>
-      <p class="text-base sm:text-lg leading-relaxed">
+      <p class="text-base sm:text-lg md:text-xl leading-relaxed">
         O Clube de Física é um espaço para mentes curiosas e apaixonadas pela ciência. Reunimos estudantes para explorar conceitos fundamentais, realizar experimentos práticos e desenvolver projetos que unem teoria e prática. 🌌
       </p>
     </div>
@@ -57,52 +54,31 @@
         <!-- Tesla -->
         <div class="bg-black bg-opacity-70 p-6 rounded-2xl shadow-xl text-center">
           <img src="images/tesla.jpg" alt="Tesla" class="w-40 h-40 mx-auto mb-4 rounded-full shadow-lg border-2 border-blue-500">
-          <h4 class="text-xl sm:text-2xl font-semibold text-blue-400 mb-3">⚡ Tesla - Núcleo de Eletrofísica</h4>
-          <p class="text-gray-200 text-sm sm:text-base">Dedicado ao estudo da eletricidade, circuitos e fenômenos eletromagnéticos. Um espaço para experimentar e inovar na área da eletrofísica.</p>
+          <h4 class="text-lg sm:text-2xl font-semibold text-blue-400 mb-3">⚡ Tesla - Núcleo de Eletrofísica</h4>
+          <p class="text-gray-200 text-sm sm:text-base">Estudo da eletricidade, circuitos e fenômenos eletromagnéticos.</p>
         </div>
 
         <!-- Nova Física -->
         <div class="bg-black bg-opacity-70 p-6 rounded-2xl shadow-xl text-center">
           <img src="images/nova_fisica.jpg" alt="Nova Física" class="w-40 h-40 mx-auto mb-4 rounded-full shadow-lg border-2 border-green-500">
-          <h4 class="text-xl sm:text-2xl font-semibold text-green-400 mb-3">📚 Nova Física</h4>
-          <p class="text-gray-200 text-sm sm:text-base">Exploramos metodologias criativas e inovadoras para o ensino e aprendizagem da Física, aproximando a ciência da sala de aula ao dia a dia.</p>
+          <h4 class="text-lg sm:text-2xl font-semibold text-green-400 mb-3">📚 Nova Física</h4>
+          <p class="text-gray-200 text-sm sm:text-base">Metodologias criativas para aproximar a ciência da sala de aula ao dia a dia.</p>
         </div>
 
         <!-- Robótica -->
         <div class="bg-black bg-opacity-70 p-6 rounded-2xl shadow-xl text-center">
           <img src="images/robotica.jpg" alt="Robótica" class="w-40 h-40 mx-auto mb-4 rounded-full shadow-lg border-2 border-yellow-500">
-          <h4 class="text-xl sm:text-2xl font-semibold text-yellow-400 mb-3">🤖 Núcleo de Robótica</h4>
-          <p class="text-gray-200 text-sm sm:text-base">Integra Física, programação e inovação tecnológica para criar protótipos e sistemas inteligentes que unem teoria e prática.</p>
+          <h4 class="text-lg sm:text-2xl font-semibold text-yellow-400 mb-3">🤖 Robótica</h4>
+          <p class="text-gray-200 text-sm sm:text-base">Integra Física, programação e inovação tecnológica em protótipos inteligentes.</p>
         </div>
 
         <!-- NEPA -->
         <div class="bg-black bg-opacity-70 p-6 rounded-2xl shadow-xl text-center">
           <img src="images/nepa.jpg" alt="NEPA" class="w-40 h-40 mx-auto mb-4 rounded-full shadow-lg border-2 border-pink-500">
-          <h4 class="text-xl sm:text-2xl font-semibold text-pink-400 mb-3">🚀 NEPA - Núcleo de Estudos e Práticas Aeroespaciais</h4>
-          <p class="text-gray-200 text-sm sm:text-base">Voltado ao estudo e desenvolvimento de foguetes experimentais e astronomia, explorando aerodinâmica, propulsão e o fascínio pelo espaço sideral.</p>
+          <h4 class="text-lg sm:text-2xl font-semibold text-pink-400 mb-3">🚀 NEPA</h4>
+          <p class="text-gray-200 text-sm sm:text-base">Foguetes experimentais, astronomia e aerodinâmica em prática.</p>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- Atividades -->
-  <section id="atividades" class="section-bg py-16 px-6 md:px-20 relative" style="background-image:url('https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-    <div class="overlay">
-      <h3 class="text-2xl sm:text-4xl font-bold text-blue-300 text-center mb-10">Nossas Atividades</h3>
-      <div class="grid md:grid-cols-3 gap-10">
-        <div class="bg-black bg-opacity-70 p-6 rounded-2xl shadow-xl">
-          <h4 class="text-lg sm:text-xl font-semibold mb-3">🔬 Experimentos</h4>
-          <p class="text-gray-200 text-sm sm:text-base">Realização de experimentos práticos que tornam o aprendizado da física divertido e interativo.</p>
-        </div>
-        <div class="bg-black bg-opacity-70 p-6 rounded-2xl shadow-xl">
-          <h4 class="text-lg sm:text-xl font-semibold mb-3">📚 Oficinas</h4>
-          <p class="text-gray-200 text-sm sm:text-base">Aulas e oficinas colaborativas para reforçar conceitos e estimular a criatividade científica.</p>
-        </div>
-        <div class="bg-black bg-opacity-70 p-6 rounded-2xl shadow-xl">
-          <h4 class="text-lg sm:text-xl font-semibold mb-3">🚀 Projetos</h4>
-          <p class="text-gray-200 text-sm sm:text-base">Desenvolvimento de protótipos, participação em feiras científicas e projetos de divulgação científica.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -110,31 +86,66 @@
   <!-- Contato -->
   <section id="contato" class="section-bg py-16 px-6 md:px-20 relative" style="background-image:url('https://images.unsplash.com/photo-1520975918318-3e94c5f0f54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
     <div class="overlay text-center">
-      <h3 class="text-2xl sm:text-4xl font-bold text-green-300 mb-6">Entre em Contato</h3>
-      <form action="mailto:athila.pires09@aluno.ifce.edu.br" method="POST" enctype="text/plain" class="max-w-lg mx-auto flex flex-col gap-4">
-        <input type="text" name="nome" placeholder="Seu nome" required class="p-3 rounded-lg text-black">
-        <input type="email" name="email" placeholder="Seu email" required class="p-3 rounded-lg text-black">
-        <textarea name="mensagem" placeholder="Sua mensagem" rows="5" required class="p-3 rounded-lg text-black"></textarea>
-        <button type="submit" class="bg-gradient-to-r from-green-500 to-blue-600 hover:scale-110 transform transition p-4 rounded-xl text-lg font-bold shadow-lg">
-          Enviar Mensagem
+      <h3 class="text-2xl sm:text-4xl font-bold text-purple-300 mb-6">Entre em Contato</h3>
+      <form action="mailto:athila.pires09@aluno.ifce.edu.br" method="post" enctype="text/plain" class="max-w-lg mx-auto space-y-4">
+        <input type="text" name="nome" placeholder="Seu nome" class="w-full p-3 rounded-xl border border-gray-500 bg-black bg-opacity-40 text-white">
+        <input type="email" name="email" placeholder="Seu e-mail" class="w-full p-3 rounded-xl border border-gray-500 bg-black bg-opacity-40 text-white">
+        <textarea name="mensagem" placeholder="Sua mensagem" rows="4" class="w-full p-3 rounded-xl border border-gray-500 bg-black bg-opacity-40 text-white"></textarea>
+        <button type="submit" class="bg-gradient-to-r from-blue-500 to-purple-700 hover:scale-110 transform transition px-6 py-3 rounded-xl shadow-lg font-semibold">
+          Enviar
         </button>
       </form>
     </div>
   </section>
 
+  <!-- Modal Login -->
+  <div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl">
+      <h2 class="text-2xl font-bold mb-4">Login 🔑</h2>
+      <input type="email" placeholder="E-mail" class="w-full p-3 mb-3 rounded-lg border">
+      <input type="password" placeholder="Senha" class="w-full p-3 mb-3 rounded-lg border">
+      <button class="bg-blue-600 w-full py-3 rounded-lg text-white font-bold hover:bg-blue-800">Entrar</button>
+      <p class="mt-3 text-sm text-gray-500">Ainda não tem conta? <a href="#" onclick="switchModal()" class="text-blue-600">Registre-se</a></p>
+      <button onclick="closeModal('loginModal')" class="mt-4 text-red-500">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Modal Registro -->
+  <div id="registerModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl">
+      <h2 class="text-2xl font-bold mb-4">Registrar 📝</h2>
+      <input type="text" placeholder="Nome" class="w-full p-3 mb-3 rounded-lg border">
+      <input type="email" placeholder="E-mail" class="w-full p-3 mb-3 rounded-lg border">
+      <input type="password" placeholder="Senha" class="w-full p-3 mb-3 rounded-lg border">
+      <button class="bg-green-600 w-full py-3 rounded-lg text-white font-bold hover:bg-green-800">Registrar</button>
+      <p class="mt-3 text-sm text-gray-500">Já tem conta? <a href="#" onclick="switchModal()" class="text-green-600">Faça login</a></p>
+      <button onclick="closeModal('registerModal')" class="mt-4 text-red-500">Fechar</button>
+    </div>
+  </div>
+
   <!-- Rodapé -->
-  <footer class="bg-black bg-opacity-80 text-center p-4 text-gray-400 text-sm">
-    © 2025 Clube de Física - IFCE Sobral | Todos os direitos reservados
+  <footer class="bg-black bg-opacity-80 text-gray-300 text-center py-6 mt-10">
+    <p>&copy; 2025 Clube de Física | Desenvolvido para o GitHub Pages</p>
   </footer>
 
-  <!-- Script menu responsivo -->
+  <!-- Scripts -->
   <script>
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+    function switchModal() {
+      closeModal('loginModal');
+      openModal('registerModal');
+    }
+
+    // Menu hambúrguer responsivo
     const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
     btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+      document.querySelector('nav ul').classList.toggle('hidden');
     });
   </script>
-
 </body>
 </html>
