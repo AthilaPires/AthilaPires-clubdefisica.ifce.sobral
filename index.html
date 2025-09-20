@@ -1,111 +1,44 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clube de Física - IFCE Sobral</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-900 text-white font-sans">
+<!-- Hero Section com Slider -->
+<section class="relative w-full h-[80vh] overflow-hidden">
+  <!-- Slides -->
+  <div id="slider" class="absolute inset-0 flex transition-transform duration-700">
+    <!-- Slide 1 -->
+    <div class="w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('IFCE-800x445-1.jpg');"></div>
+    <!-- Slide 2 -->
+    <div class="w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('images (1).jpeg');"></div>
+    <!-- Slide 3 (extra, se quiser mais depois) -->
+    <div class="w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581091012184-5c8a0d33bd83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+  </div>
 
-  <!-- Navbar -->
-  <nav class="bg-gray-800 fixed w-full z-50 shadow-lg">
-    <div class="container mx-auto flex items-center justify-between p-4">
-      <h1 class="text-xl sm:text-2xl font-bold text-blue-400">Clube de Física</h1>
-      <ul class="hidden md:flex space-x-6 text-gray-200">
-        <li><a href="#home" class="hover:text-blue-400">Início</a></li>
-        <li><a href="#nucleos" class="hover:text-blue-400">Núcleos</a></li>
-        <li><a href="#sobre" class="hover:text-blue-400">Sobre</a></li>
-        <li><a href="#contato" class="hover:text-blue-400">Contato</a></li>
-      </ul>
-      <button class="md:hidden text-gray-200 focus:outline-none" id="menu-btn">☰</button>
-    </div>
-    <!-- Menu Mobile -->
-    <div class="hidden bg-gray-700 md:hidden flex-col space-y-4 px-4 pb-4" id="mobile-menu">
-      <a href="#home" class="block hover:text-blue-400">Início</a>
-      <a href="#nucleos" class="block hover:text-blue-400">Núcleos</a>
-      <a href="#sobre" class="block hover:text-blue-400">Sobre</a>
-      <a href="#contato" class="block hover:text-blue-400">Contato</a>
-    </div>
-  </nav>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center p-6">
+    <h2 class="text-xl sm:text-4xl md:text-6xl font-extrabold text-white mb-4 animate-bounce">
+      Clube de Física ⚡
+    </h2>
+    <p class="text-xs sm:text-base md:text-lg text-gray-200 mb-6">
+      Ciência, inovação e descobertas em um só lugar! 🚀✨
+    </p>
+    <a href="#nucleos" class="bg-gradient-to-r from-blue-500 to-purple-700 hover:scale-105 transform transition px-4 sm:px-6 py-2 sm:py-3 rounded-xl shadow-2xl text-xs sm:text-lg font-semibold text-white">
+      Conheça nossos Núcleos
+    </a>
 
-  <!-- Hero com Slider -->
-  <section id="home" class="relative w-full h-[80vh] overflow-hidden">
-    <div id="slider" class="absolute inset-0 flex transition-transform duration-700">
-      <div class="w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('IFCE-800x445-1.jpg');"></div>
-      <div class="w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('images (1).jpeg');"></div>
-      <div class="w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581091012184-5c8a0d33bd83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
-    </div>
-    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center p-6">
-      <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-4 animate-bounce">Clube de Física ⚡</h2>
-      <p class="text-base md:text-lg text-gray-200 mb-6">Ciência, inovação e descobertas em um só lugar! 🚀✨</p>
-      <a href="#nucleos" class="bg-gradient-to-r from-blue-500 to-purple-700 hover:scale-105 transform transition px-6 py-3 rounded-xl shadow-2xl text-lg font-semibold text-white">Conheça nossos Núcleos</a>
-    </div>
-  </section>
+    <!-- E-mail adicionado -->
+    <p class="mt-4 text-gray-300 text-sm sm:text-base">
+      📧 <a href="mailto:fisica.sobral@ifce.edu.br" class="text-blue-400 hover:underline">fisica.sobral@ifce.edu.br</a>
+    </p>
+  </div>
+</section>
 
-  <!-- Núcleos -->
-  <section id="nucleos" class="py-16 bg-gray-900">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-blue-400 mb-10">Nossos Núcleos</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-4 text-white">Núcleo de Óptica 🔬</h3>
-          <p class="text-gray-300">Explorando fenômenos da luz e suas aplicações em tecnologias modernas.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-4 text-white">Núcleo de Eletricidade ⚡</h3>
-          <p class="text-gray-300">Estudos práticos sobre circuitos, energia elétrica e eletrônica aplicada.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-4 text-white">Núcleo de Mecânica ⚙️</h3>
-          <p class="text-gray-300">Analisando movimentos, forças e aplicações da física no dia a dia.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Script do Slider -->
+<script>
+  const slider = document.getElementById('slider');
+  let index = 0;
 
-  <!-- Sobre -->
-  <section id="sobre" class="py-16 bg-gray-800">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-purple-400 mb-6">Sobre o Clube</h2>
-      <p class="text-gray-300 max-w-3xl mx-auto">
-        O Clube de Física do IFCE Sobral é um espaço de aprendizado colaborativo, onde estudantes e professores exploram os fenômenos físicos por meio de experimentos, projetos e debates. Nossa missão é despertar a curiosidade científica e incentivar a inovação tecnológica.
-      </p>
-    </div>
-  </section>
+  function moveSlide() {
+    index = (index + 1) % slider.children.length;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
 
-  <!-- Contato -->
-  <section id="contato" class="py-16 bg-gray-900">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-blue-400 mb-6">Entre em Contato</h2>
-      <p class="text-gray-300 mb-4">📧 <a href="mailto:fisica.sobral@ifce.edu.br" class="text-blue-400 hover:underline">fisica.sobral@ifce.edu.br</a></p>
-      <p class="text-gray-300">📍 Instituto Federal do Ceará - Campus Sobral</p>
-    </div>
-  </section>
+  setInterval(moveSlide, 4000); // muda a cada 4 segundos
+</script>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 py-6 text-center text-gray-400 text-sm">
-    © 2025 Clube de Física - IFCE Sobral. Todos os direitos reservados.  
-    <br>
-    Contato: <a href="mailto:fisica.sobral@ifce.edu.br" class="text-blue-400 hover:underline">fisica.sobral@ifce.edu.br</a>
-  </footer>
-
-  <!-- Script Slider e Menu -->
-  <script>
-    const slider = document.getElementById('slider');
-    let index = 0;
-    function moveSlide() {
-      index = (index + 1) % slider.children.length;
-      slider.style.transform = `translateX(-${index * 100}%)`;
-    }
-    setInterval(moveSlide, 4000);
-
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
-
-</body>
-</html>
