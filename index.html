@@ -17,8 +17,7 @@
       <li><a href="#nucleos" class="hover:text-blue-400 hover:scale-110 transition transform">Núcleos</a></li>
       <li><a href="#atividades" class="hover:text-blue-400 hover:scale-110 transition transform">Atividades</a></li>
       <li><a href="#contato" class="hover:text-blue-400 hover:scale-110 transition transform">Contato</a></li>
-      <li><button onclick="openModal('loginModal')" class="bg-blue-600 px-3 py-2 rounded-lg hover:bg-blue-800 transition">Login</button></li>
-      <li><button onclick="openModal('registerModal')" class="bg-green-600 px-3 py-2 rounded-lg hover:bg-green-800 transition">Registrar</button></li>
+      <li><button onclick="openModal()" class="bg-blue-600 px-3 py-2 rounded-lg hover:bg-blue-800 transition">Login / Registrar</button></li>
     </ul>
     <!-- Botão hambúrguer mobile -->
     <button id="menu-btn" class="md:hidden text-3xl">☰</button>
@@ -98,38 +97,52 @@
     </div>
   </section>
 
-  <!-- Modal Login -->
-  <div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-    <div class="bg-white text-black rounded-xl p-6 sm:p-8 max-w-sm w-full shadow-2xl">
-      <h2 class="text-2xl font-bold mb-4">Login 🔑</h2>
-      <input type="email" placeholder="E-mail" class="w-full p-3 mb-3 rounded-lg border">
-      <input type="password" placeholder="Senha" class="w-full p-3 mb-3 rounded-lg border">
-      <button class="bg-blue-600 w-full py-3 rounded-lg text-white font-bold hover:bg-blue-800 mb-3">Entrar</button>
+  <!-- Modal Login/Registro Melhorado -->
+  <div id="authModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 transition-opacity duration-500">
+    <div class="bg-gray-900 rounded-3xl shadow-2xl w-11/12 max-w-md p-6 sm:p-10 transform scale-90 opacity-0 transition-all duration-500 relative">
+      
+      <!-- Background Physics Image -->
+      <div class="absolute inset-0 rounded-3xl overflow-hidden opacity-20">
+        <img src="https://images.unsplash.com/photo-1581091012184-5c8a0d33bd83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Física" class="w-full h-full object-cover">
+      </div>
 
-      <!-- Login social -->
-      <button class="bg-red-600 w-full py-2 rounded-lg text-white font-semibold hover:bg-red-800 mb-2">Conectar com Google</button>
-      <button class="bg-gray-700 w-full py-2 rounded-lg text-white font-semibold hover:bg-gray-900 mb-2">Conectar com Facebook</button>
+      <!-- Tabs -->
+      <div class="flex justify-center mb-6 relative z-10">
+        <button id="loginTab" class="px-6 py-2 font-bold border-b-2 border-blue-500 text-blue-400 transition">Login</button>
+        <button id="registerTab" class="px-6 py-2 font-bold border-b-2 border-transparent text-white hover:border-green-500 hover:text-green-400 transition">Registrar</button>
+      </div>
 
-      <p class="mt-3 text-sm text-gray-500">Ainda não tem conta? <a href="#" onclick="switchModal()" class="text-blue-600">Registre-se</a></p>
-      <button onclick="closeModal('loginModal')" class="mt-4 text-red-500 font-bold">Fechar</button>
-    </div>
-  </div>
+      <!-- Login Form -->
+      <div id="loginForm" class="relative z-10">
+        <input type="email" id="loginEmail" placeholder="E-mail" class="w-full p-3 mb-3 rounded-lg border border-gray-600 bg-gray-800 text-white">
+        <input type="password" id="loginPassword" placeholder="Senha" class="w-full p-3 mb-3 rounded-lg border border-gray-600 bg-gray-800 text-white">
+        <button onclick="login()" class="w-full bg-blue-600 py-3 rounded-lg font-bold hover:bg-blue-800 transition mb-3">Entrar</button>
+        <div class="flex flex-col gap-2">
+          <button class="w-full bg-red-600 py-2 rounded-lg font-semibold hover:bg-red-800 transition">Login com Google</button>
+          <button class="w-full bg-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-900 transition">Login com Facebook</button>
+        </div>
+      </div>
 
-  <!-- Modal Registro -->
-  <div id="registerModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-    <div class="bg-white text-black rounded-xl p-6 sm:p-8 max-w-sm w-full shadow-2xl">
-      <h2 class="text-2xl font-bold mb-4">Registrar 📝</h2>
-      <input type="text" placeholder="Nome" class="w-full p-3 mb-3 rounded-lg border">
-      <input type="email" placeholder="E-mail" class="w-full p-3 mb-3 rounded-lg border">
-      <input type="password" placeholder="Senha" class="w-full p-3 mb-3 rounded-lg border">
-      <button class="bg-green-600 w-full py-3 rounded-lg text-white font-bold hover:bg-green-800 mb-3">Registrar</button>
+      <!-- Register Form -->
+      <div id="registerForm" class="hidden relative z-10">
+        <input type="text" id="regName" placeholder="Nome" class="w-full p-3 mb-3 rounded-lg border border-gray-600 bg-gray-800 text-white">
+        <input type="email" id="regEmail" placeholder="E-mail" class="w-full p-3 mb-3 rounded-lg border border-gray-600 bg-gray-800 text-white">
+        <input type="password" id="regPassword" placeholder="Senha" class="w-full p-3 mb-3 rounded-lg border border-gray-600 bg-gray-800 text-white">
+        <button onclick="register()" class="w-full bg-green-600 py-3 rounded-lg font-bold hover:bg-green-800 transition mb-3">Registrar</button>
+        <div class="flex flex-col gap-2">
+          <button class="w-full bg-red-600 py-2 rounded-lg font-semibold hover:bg-red-800 transition">Registrar com Google</button>
+          <button class="w-full bg-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-900 transition">Registrar com Facebook</button>
+        </div>
+      </div>
 
-      <!-- Login social -->
-      <button class="bg-red-600 w-full py-2 rounded-lg text-white font-semibold hover:bg-red-800 mb-2">Conectar com Google</button>
-      <button class="bg-gray-700 w-full py-2 rounded-lg text-white font-semibold hover:bg-gray-900 mb-2">Conectar com Facebook</button>
+      <!-- Switch -->
+      <p class="mt-4 text-sm text-gray-300 relative z-10 text-center">
+        <span id="switchText">Ainda não tem conta?</span>
+        <a href="#" id="switchLink" class="text-blue-400 font-bold ml-1">Registrar</a>
+      </p>
 
-      <p class="mt-3 text-sm text-gray-500">Já tem conta? <a href="#" onclick="switchModal()" class="text-green-600">Faça login</a></p>
-      <button onclick="closeModal('registerModal')" class="mt-4 text-red-500 font-bold">Fechar</button>
+      <!-- Close -->
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-red-500 font-bold text-xl z-10 hover:scale-125 transition">×</button>
     </div>
   </div>
 
@@ -140,9 +153,83 @@
 
   <!-- Scripts -->
   <script>
-    function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
-    function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
-    function switchModal() { closeModal('loginModal'); openModal('registerModal'); }
+    const modal = document.getElementById('authModal');
+    const loginTab = document.getElementById('loginTab');
+    const registerTab = document.getElementById('registerTab');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const switchText = document.getElementById('switchText');
+    const switchLink = document.getElementById('switchLink');
+
+    let users = []; // armazenamento temporário
+
+    function openModal() {
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.querySelector('div').classList.remove('opacity-0', 'scale-90');
+        modal.querySelector('div').classList.add('opacity-100', 'scale-100');
+      }, 50);
+    }
+
+    function closeModal() {
+      modal.querySelector('div').classList.remove('opacity-100', 'scale-100');
+      modal.querySelector('div').classList.add('opacity-0', 'scale-90');
+      setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+
+    function switchToRegister() {
+      loginForm.classList.add('hidden');
+      registerForm.classList.remove('hidden');
+      loginTab.classList.remove('border-blue-500','text-blue-400');
+      loginTab.classList.add('border-transparent','text-white');
+      registerTab.classList.add('border-green-500','text-green-400');
+      switchText.textContent = "Já tem conta?";
+      switchLink.textContent = "Login";
+    }
+
+    function switchToLogin() {
+      registerForm.classList.add('hidden');
+      loginForm.classList.remove('hidden');
+      registerTab.classList.remove('border-green-500','text-green-400');
+      loginTab.classList.add('border-blue-500','text-blue-400');
+      switchText.textContent = "Ainda não tem conta?";
+      switchLink.textContent = "Registrar";
+    }
+
+    switchLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      if(loginForm.classList.contains('hidden')) switchToLogin();
+      else switchToRegister();
+    });
+
+    loginTab.addEventListener('click', switchToLogin);
+    registerTab.addEventListener('click', switchToRegister);
+
+    function register() {
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const password = document.getElementById('regPassword').value;
+
+      if(!name || !email || !password) { alert("Preencha todos os campos!"); return; }
+      users.push({ name, email, password });
+      alert("Registrado com sucesso! Agora faça login.");
+      document.getElementById('loginEmail').value = email;
+      document.getElementById('loginPassword').value = password;
+      switchToLogin();
+    }
+
+    function login() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      const user = users.find(u => u.email === email && u.password === password);
+      if(user) {
+        alert(`Bem-vindo, ${user.name}! Redirecionando para o Clube de Física...`);
+        closeModal();
+      } else {
+        alert("E-mail ou senha inválidos!");
+      }
+    }
 
     // Menu hambúrguer responsivo
     const btn = document.getElementById('menu-btn');
@@ -152,4 +239,3 @@
   </script>
 </body>
 </html>
-
