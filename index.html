@@ -7,76 +7,76 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col bg-gray-900 text-white">
 
   <!-- Navbar -->
-  <nav class="bg-black bg-opacity-70 backdrop-blur-md text-white p-4 shadow-lg flex justify-between items-center sticky top-0 z-50">
-    <h1 class="text-xl sm:text-2xl font-bold tracking-wide">Clube de Física ⚡</h1>
-    <ul class="hidden md:flex gap-6">
-      <li><a href="#sobre" class="hover:text-blue-400 transition">Sobre</a></li>
-      <li><a href="#nucleos" class="hover:text-blue-400 transition">Núcleos</a></li>
-      <li><a href="#atividades" class="hover:text-blue-400 transition">Atividades</a></li>
-      <li><a href="#contato" class="hover:text-blue-400 transition">Contato</a></li>
-      <li><button onclick="openModal('loginModal')" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-800 transition">Login</button></li>
-      <li><button onclick="openModal('registerModal')" class="bg-green-600 px-4 py-2 rounded-lg hover:bg-green-800 transition">Registrar</button></li>
+  <nav class="bg-black bg-opacity-80 backdrop-blur-md p-4 shadow-2xl flex justify-between items-center sticky top-0 z-50 transition-all duration-300">
+    <h1 class="text-xl sm:text-2xl font-extrabold tracking-wide animate-pulse">Clube de Física ⚡</h1>
+    <ul class="hidden md:flex gap-6 text-sm sm:text-base font-medium">
+      <li><a href="#sobre" class="hover:text-blue-400 hover:scale-110 transition transform">Sobre</a></li>
+      <li><a href="#nucleos" class="hover:text-blue-400 hover:scale-110 transition transform">Núcleos</a></li>
+      <li><a href="#atividades" class="hover:text-blue-400 hover:scale-110 transition transform">Atividades</a></li>
+      <li><a href="#contato" class="hover:text-blue-400 hover:scale-110 transition transform">Contato</a></li>
+      <li><button onclick="openModal('loginModal')" class="bg-blue-600 px-3 py-2 rounded-lg hover:bg-blue-800 transition">Login</button></li>
+      <li><button onclick="openModal('registerModal')" class="bg-green-600 px-3 py-2 rounded-lg hover:bg-green-800 transition">Registrar</button></li>
     </ul>
     <!-- Botão hambúrguer mobile -->
     <button id="menu-btn" class="md:hidden text-3xl">☰</button>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-bg flex-1 flex flex-col items-center justify-center text-center p-10 text-white relative">
+  <section class="hero-bg flex-1 flex flex-col items-center justify-center text-center p-6 sm:p-10 text-white relative">
     <div class="overlay max-w-3xl">
-      <h2 class="text-3xl sm:text-5xl md:text-7xl font-extrabold mb-6 animate-bounce">Bem-vindo ao Clube de Física</h2>
-      <p class="text-base sm:text-lg md:text-2xl mb-6">Ciência, inovação e descobertas em um só lugar! 🚀✨</p>
-      <a href="#nucleos" class="bg-gradient-to-r from-blue-500 to-purple-700 hover:scale-110 transform transition px-8 py-4 rounded-xl shadow-2xl text-lg font-semibold">
+      <h2 class="text-2xl sm:text-4xl md:text-6xl font-extrabold mb-4 animate-bounce">Bem-vindo ao Clube de Física</h2>
+      <p class="text-sm sm:text-base md:text-xl mb-6">Ciência, inovação e descobertas em um só lugar! 🚀✨</p>
+      <a href="#nucleos" class="bg-gradient-to-r from-blue-500 to-purple-700 hover:scale-110 transform transition px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-2xl text-sm sm:text-lg font-semibold">
         Conheça nossos Núcleos
       </a>
     </div>
   </section>
 
   <!-- Sobre -->
-  <section id="sobre" class="section-bg py-16 px-6 md:px-20 relative" style="background-image:url('https://images.unsplash.com/photo-1581091012184-5c8a0d33bd83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-    <div class="overlay max-w-4xl mx-auto text-center">
-      <h3 class="text-2xl sm:text-4xl font-bold text-blue-300 mb-6">Sobre o Clube</h3>
-      <p class="text-base sm:text-lg md:text-xl leading-relaxed">
+  <section id="sobre" class="section-bg py-12 sm:py-16 px-4 sm:px-20 relative" style="background-image:url('https://images.unsplash.com/photo-1581091012184-5c8a0d33bd83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+    <div class="overlay max-w-4xl mx-auto text-center bg-black bg-opacity-50 p-6 rounded-2xl">
+      <h3 class="text-xl sm:text-3xl font-bold text-blue-300 mb-4 sm:mb-6">Sobre o Clube</h3>
+      <p class="text-sm sm:text-base md:text-lg leading-relaxed">
         O Clube de Física é um espaço para mentes curiosas e apaixonadas pela ciência. Reunimos estudantes para explorar conceitos fundamentais, realizar experimentos práticos e desenvolver projetos que unem teoria e prática. 🌌
       </p>
     </div>
   </section>
 
   <!-- Núcleos -->
-  <section id="nucleos" class="section-bg py-16 px-6 md:px-20 relative" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+  <section id="nucleos" class="section-bg py-12 sm:py-16 px-4 sm:px-20 relative" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
     <div class="overlay">
-      <h3 class="text-2xl sm:text-4xl font-bold text-purple-300 text-center mb-10">Nossos Núcleos</h3>
-      <div class="grid md:grid-cols-2 gap-10">
+      <h3 class="text-xl sm:text-3xl font-bold text-purple-300 text-center mb-8 sm:mb-10">Nossos Núcleos</h3>
+      <div class="grid md:grid-cols-2 gap-6 sm:gap-10">
 
         <!-- Tesla -->
-        <div class="bg-black bg-opacity-70 p-6 rounded-2xl shadow-xl text-center">
-          <img src="images/tesla.jpg" alt="Tesla" class="w-40 h-40 mx-auto mb-4 rounded-full shadow-lg border-2 border-blue-500">
-          <h4 class="text-lg sm:text-2xl font-semibold text-blue-400 mb-3">⚡ Tesla - Núcleo de Eletrofísica</h4>
-          <p class="text-gray-200 text-sm sm:text-base">Estudo da eletricidade, circuitos e fenômenos eletromagnéticos.</p>
+        <div class="bg-black bg-opacity-70 p-4 sm:p-6 rounded-2xl shadow-xl text-center hover:scale-105 transition transform">
+          <img src="images/tesla.jpg" alt="Tesla" class="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-3 sm:mb-4 rounded-full shadow-lg border-2 border-blue-500">
+          <h4 class="text-sm sm:text-xl font-semibold text-blue-400 mb-2 sm:mb-3">⚡ Tesla - Núcleo de Eletrofísica</h4>
+          <p class="text-gray-200 text-xs sm:text-sm">Estudo da eletricidade, circuitos e fenômenos eletromagnéticos.</p>
         </div>
 
         <!-- Nova Física -->
-        <div class="bg-black bg-opacity-70 p-6 rounded-2xl shadow-xl text-center">
-          <img src="images/nova_fisica.jpg" alt="Nova Física" class="w-40 h-40 mx-auto mb-4 rounded-full shadow-lg border-2 border-green-500">
-          <h4 class="text-lg sm:text-2xl font-semibold text-green-400 mb-3">📚 Nova Física</h4>
-          <p class="text-gray-200 text-sm sm:text-base">Metodologias criativas para aproximar a ciência da sala de aula ao dia a dia.</p>
+        <div class="bg-black bg-opacity-70 p-4 sm:p-6 rounded-2xl shadow-xl text-center hover:scale-105 transition transform">
+          <img src="images/nova_fisica.jpg" alt="Nova Física" class="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-3 sm:mb-4 rounded-full shadow-lg border-2 border-green-500">
+          <h4 class="text-sm sm:text-xl font-semibold text-green-400 mb-2 sm:mb-3">📚 Nova Física</h4>
+          <p class="text-gray-200 text-xs sm:text-sm">Metodologias criativas para aproximar a ciência da sala de aula ao dia a dia.</p>
         </div>
 
         <!-- Robótica -->
-        <div class="bg-black bg-opacity-70 p-6 rounded-2xl shadow-xl text-center">
-          <img src="images/robotica.jpg" alt="Robótica" class="w-40 h-40 mx-auto mb-4 rounded-full shadow-lg border-2 border-yellow-500">
-          <h4 class="text-lg sm:text-2xl font-semibold text-yellow-400 mb-3">🤖 Robótica</h4>
-          <p class="text-gray-200 text-sm sm:text-base">Integra Física, programação e inovação tecnológica em protótipos inteligentes.</p>
+        <div class="bg-black bg-opacity-70 p-4 sm:p-6 rounded-2xl shadow-xl text-center hover:scale-105 transition transform">
+          <img src="images/robotica.jpg" alt="Robótica" class="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-3 sm:mb-4 rounded-full shadow-lg border-2 border-yellow-500">
+          <h4 class="text-sm sm:text-xl font-semibold text-yellow-400 mb-2 sm:mb-3">🤖 Robótica</h4>
+          <p class="text-gray-200 text-xs sm:text-sm">Integra Física, programação e inovação tecnológica em protótipos inteligentes.</p>
         </div>
 
         <!-- NEPA -->
-        <div class="bg-black bg-opacity-70 p-6 rounded-2xl shadow-xl text-center">
-          <img src="images/nepa.jpg" alt="NEPA" class="w-40 h-40 mx-auto mb-4 rounded-full shadow-lg border-2 border-pink-500">
-          <h4 class="text-lg sm:text-2xl font-semibold text-pink-400 mb-3">🚀 NEPA</h4>
-          <p class="text-gray-200 text-sm sm:text-base">Foguetes experimentais, astronomia e aerodinâmica em prática.</p>
+        <div class="bg-black bg-opacity-70 p-4 sm:p-6 rounded-2xl shadow-xl text-center hover:scale-105 transition transform">
+          <img src="images/nepa.jpg" alt="NEPA" class="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-3 sm:mb-4 rounded-full shadow-lg border-2 border-pink-500">
+          <h4 class="text-sm sm:text-xl font-semibold text-pink-400 mb-2 sm:mb-3">🚀 NEPA</h4>
+          <p class="text-gray-200 text-xs sm:text-sm">Foguetes experimentais, astronomia e aerodinâmica em prática.</p>
         </div>
 
       </div>
@@ -84,14 +84,14 @@
   </section>
 
   <!-- Contato -->
-  <section id="contato" class="section-bg py-16 px-6 md:px-20 relative" style="background-image:url('https://images.unsplash.com/photo-1520975918318-3e94c5f0f54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-    <div class="overlay text-center">
-      <h3 class="text-2xl sm:text-4xl font-bold text-purple-300 mb-6">Entre em Contato</h3>
+  <section id="contato" class="section-bg py-12 sm:py-16 px-4 sm:px-20 relative" style="background-image:url('https://images.unsplash.com/photo-1520975918318-3e94c5f0f54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+    <div class="overlay text-center bg-black bg-opacity-50 p-6 rounded-2xl">
+      <h3 class="text-xl sm:text-3xl font-bold text-purple-300 mb-6">Entre em Contato</h3>
       <form action="mailto:athila.pires09@aluno.ifce.edu.br" method="post" enctype="text/plain" class="max-w-lg mx-auto space-y-4">
-        <input type="text" name="nome" placeholder="Seu nome" class="w-full p-3 rounded-xl border border-gray-500 bg-black bg-opacity-40 text-white">
-        <input type="email" name="email" placeholder="Seu e-mail" class="w-full p-3 rounded-xl border border-gray-500 bg-black bg-opacity-40 text-white">
-        <textarea name="mensagem" placeholder="Sua mensagem" rows="4" class="w-full p-3 rounded-xl border border-gray-500 bg-black bg-opacity-40 text-white"></textarea>
-        <button type="submit" class="bg-gradient-to-r from-blue-500 to-purple-700 hover:scale-110 transform transition px-6 py-3 rounded-xl shadow-lg font-semibold">
+        <input type="text" name="nome" placeholder="Seu nome" class="w-full p-3 rounded-xl border border-gray-500 bg-black bg-opacity-40 text-white text-sm sm:text-base">
+        <input type="email" name="email" placeholder="Seu e-mail" class="w-full p-3 rounded-xl border border-gray-500 bg-black bg-opacity-40 text-white text-sm sm:text-base">
+        <textarea name="mensagem" placeholder="Sua mensagem" rows="4" class="w-full p-3 rounded-xl border border-gray-500 bg-black bg-opacity-40 text-white text-sm sm:text-base"></textarea>
+        <button type="submit" class="bg-gradient-to-r from-blue-500 to-purple-700 hover:scale-110 transform transition px-6 py-3 rounded-xl shadow-lg font-semibold text-sm sm:text-base">
           Enviar
         </button>
       </form>
@@ -100,26 +100,36 @@
 
   <!-- Modal Login -->
   <div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-    <div class="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl">
+    <div class="bg-white text-black rounded-xl p-6 sm:p-8 max-w-sm w-full shadow-2xl">
       <h2 class="text-2xl font-bold mb-4">Login 🔑</h2>
       <input type="email" placeholder="E-mail" class="w-full p-3 mb-3 rounded-lg border">
       <input type="password" placeholder="Senha" class="w-full p-3 mb-3 rounded-lg border">
-      <button class="bg-blue-600 w-full py-3 rounded-lg text-white font-bold hover:bg-blue-800">Entrar</button>
+      <button class="bg-blue-600 w-full py-3 rounded-lg text-white font-bold hover:bg-blue-800 mb-3">Entrar</button>
+
+      <!-- Login social -->
+      <button class="bg-red-600 w-full py-2 rounded-lg text-white font-semibold hover:bg-red-800 mb-2">Conectar com Google</button>
+      <button class="bg-gray-700 w-full py-2 rounded-lg text-white font-semibold hover:bg-gray-900 mb-2">Conectar com Facebook</button>
+
       <p class="mt-3 text-sm text-gray-500">Ainda não tem conta? <a href="#" onclick="switchModal()" class="text-blue-600">Registre-se</a></p>
-      <button onclick="closeModal('loginModal')" class="mt-4 text-red-500">Fechar</button>
+      <button onclick="closeModal('loginModal')" class="mt-4 text-red-500 font-bold">Fechar</button>
     </div>
   </div>
 
   <!-- Modal Registro -->
   <div id="registerModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-    <div class="bg-white text-black rounded-xl p-8 max-w-sm w-full shadow-2xl">
+    <div class="bg-white text-black rounded-xl p-6 sm:p-8 max-w-sm w-full shadow-2xl">
       <h2 class="text-2xl font-bold mb-4">Registrar 📝</h2>
       <input type="text" placeholder="Nome" class="w-full p-3 mb-3 rounded-lg border">
       <input type="email" placeholder="E-mail" class="w-full p-3 mb-3 rounded-lg border">
       <input type="password" placeholder="Senha" class="w-full p-3 mb-3 rounded-lg border">
-      <button class="bg-green-600 w-full py-3 rounded-lg text-white font-bold hover:bg-green-800">Registrar</button>
+      <button class="bg-green-600 w-full py-3 rounded-lg text-white font-bold hover:bg-green-800 mb-3">Registrar</button>
+
+      <!-- Login social -->
+      <button class="bg-red-600 w-full py-2 rounded-lg text-white font-semibold hover:bg-red-800 mb-2">Conectar com Google</button>
+      <button class="bg-gray-700 w-full py-2 rounded-lg text-white font-semibold hover:bg-gray-900 mb-2">Conectar com Facebook</button>
+
       <p class="mt-3 text-sm text-gray-500">Já tem conta? <a href="#" onclick="switchModal()" class="text-green-600">Faça login</a></p>
-      <button onclick="closeModal('registerModal')" class="mt-4 text-red-500">Fechar</button>
+      <button onclick="closeModal('registerModal')" class="mt-4 text-red-500 font-bold">Fechar</button>
     </div>
   </div>
 
@@ -130,16 +140,9 @@
 
   <!-- Scripts -->
   <script>
-    function openModal(id) {
-      document.getElementById(id).classList.remove('hidden');
-    }
-    function closeModal(id) {
-      document.getElementById(id).classList.add('hidden');
-    }
-    function switchModal() {
-      closeModal('loginModal');
-      openModal('registerModal');
-    }
+    function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+    function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+    function switchModal() { closeModal('loginModal'); openModal('registerModal'); }
 
     // Menu hambúrguer responsivo
     const btn = document.getElementById('menu-btn');
@@ -149,3 +152,4 @@
   </script>
 </body>
 </html>
+
