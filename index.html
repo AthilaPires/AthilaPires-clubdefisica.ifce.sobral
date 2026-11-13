@@ -119,7 +119,7 @@ footer{background:var(--hero);color:#B9C4E4;padding:34px 0;text-align:center;fon
 </main>
 <footer><div class="c"><p><em>Clube de Física / 2025-2026</em></p><p><em>Instituto Federal do Ceará, Campus Sobral</em></p></div></footer>
 <script>
-const IC={dark:"☀️",light:"🌙"};
+const IC={dark:"⚪",light:"⚫"};
 function setTema(t){document.documentElement.dataset.theme=t;const b=document.getElementById("tema");b.textContent=IC[t];b.title=t==="dark"?"Mudar para modo claro":"Mudar para modo noturno";try{localStorage.setItem("tema",t)}catch(e){}}
 let t0=null;try{t0=localStorage.getItem("tema")}catch(e){}
 setTema(t0||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
